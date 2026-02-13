@@ -10,7 +10,7 @@ body {
   color: white;
   display: flex;
   flex-direction: column;
-  animation: pageFade 1.5s ease forwards;
+  animation: pageFade 5s ease forwards;
   /* animation: gradientMove 30s ease infinite; */
 }
 
