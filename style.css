@@ -1,14 +1,139 @@
 body {
-    margin: 0;
-    min-height: 100vh;
-    background:
-    radial-gradient(circle at center, rgba(255,255,255,0.06), transparent 60%),
-    repeating-linear-gradient(
-    0deg,
-    rgba(0,0,0,0.03),
-    rgba(0,0,0,0.03) 1px,
-    transparent 1px,
-    transparent 2px
-    ),
+  opacity: 0;
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px),
     linear-gradient(135deg, #5a0f1b, #8b1e2d, #4a0d17);
+  background-size: 3px 3px, cover;
+  font-family: Arial, sans-serif;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  animation: pageFade 1.5s ease forwards;
+  /* animation: gradientMove 30s ease infinite; */
+}
+
+@keyframes pageFade {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+#loveText {
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-out {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  font-family: "Great Vibes", cursive;
+  font-size: 5rem;
+  margin: 0;
+}
+
+p {
+  font-family: "Playfair Display", serif;
+  font-size: 1.2rem;
+}
+
+button {
+    background-color: gray;
+    font-family: "Playfair Display", serif;
+    background: transparent;
+    color: white;
+}
+
+.layout {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 5px;
+  padding: 0px;
+}
+
+.side {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  overflow-y: auto;
+}
+
+.side img {
+  width: 100%;
+  border-radius: 15px;
+}
+
+.center {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-photo {
+  max-width: 250px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+.footer {
+  position: relative;
+  height: 80px;
+  overflow: hidden;
+}
+
+#train {   
+    position: absolute;
+    display: none;
+    bottom: 0;
+    left: -1500px;
+    width: 1000px;
+    height: auto;
+    animation: moveTrain 15s linear 1;
+}
+
+#badButton {
+  position: absolute;
+  display: none;
+  bottom: 20px;       
+  left: 50%;
+  transform: translateX(-50%);
+  transition: top 0.2s, left 0.2s;
+}
+
+#coolButton {
+  display: none;
+  position: absolute;  
+}
+
+@keyframes moveTrain {
+  0% { left: -1000px; }
+  100% { left: 100%; }
 }
